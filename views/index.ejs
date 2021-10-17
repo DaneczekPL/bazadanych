@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja aplikacja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body{
+        margin: 0;
+        padding:0;
+    }
+    th,td {
+        border: 1px solid black;
+        margin: 1rem;
+        padding:1em;     
+    }
+    table {
+        border-collapse: collapse;
+        margin: 1rem;
+    }
+</style>
+<body>
+    <h1>Siema</h1>
+    <form action="/studenci" method="POST">
+        <input type="number" placeholder="Numer Albumu" name="album">
+        <input type="text" placeholder="Podaj Imie" name="imie">
+        <input type="text" placeholder="Podaj Nazwisko" name="nazwisko">
+        <button type="submit">Zatwierdź</button>
+    </form>
+      <table>
+          <tr>
+              <th>Album</th>
+              <th>Imie</th>
+              <th>Nazwisko</th>
+          </tr>
+          <% for(var i = 0; i < studenci.length; i++) {%>
+            <tr>
+                <th><%= studenci[i].album %></th>
+                <th><%= studenci[i].imie %></th>
+                <th><%= studenci[i].nazwisko %></th>
+                <th><button>Usuń</button></th>
+            </tr>
+            <% } %>
+      </table>
+</body>
+</html>
